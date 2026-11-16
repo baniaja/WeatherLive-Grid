@@ -1,0 +1,171 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+    --color-primary: #3B82F6;
+    --color-primary-dark: #2563EB;
+    --color-secondary: #8B5CF6;
+    --color-accent: #38BDF8;
+    --color-success: #22C55E;
+    --color-warning: #F59E0B;
+    --color-danger: #EF4444;
+    --color-info: #3B82F6;
+    --color-background: #F8FAFC;
+    --color-surface: #FFFFFF;
+    --color-card: #FFFFFF;
+    --color-border: rgba(148, 163, 184, 0.2);
+    --color-text: #0F172A;
+    --color-muted: #64748B;
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-lg: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.dark {
+    --color-background: #0B1220;
+    --color-surface: #111B2E;
+    --color-card: #152036;
+    --color-border: rgba(148, 163, 184, 0.15);
+    --color-text: #E2E8F0;
+    --color-muted: #94A3B8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-temp { font-size: 32px !important; }
+    .hero-quick { flex-wrap: wrap; }
+    .hq-btn { padding: 8px 12px !important; font-size: 12px !important; }
+    .bento { gap: 12px !important; }
+    .intel-strip-b12 { grid-template-columns: repeat(2, 1fr) !important; }
+    .map-layerbar { flex-wrap: wrap; }
+    .feature-tile { min-width: 0; }
+    .b3, .b5, .b6, .b7, .b12 { grid-column: span 12 !important; }
+    .p-card { padding: 14px !important; }
+    .metric-ic { width: 36px !important; height: 36px !important; font-size: 16px !important; }
+    .day-item { padding: 10px !important; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .b3, .b5, .b6, .b7, .b12 { grid-column: span 6 !important; }
+}
+
+@media (min-width: 1025px) {
+    .b3, .b5, .b6, .b7, .b12 { grid-column: span 4 !important; }
+    .b12 { grid-column: span 12 !important; }
+}
+
+@media (max-width: 430px) {
+    .hero-temp { font-size: 28px !important; }
+    .intel-strip-b12 { grid-template-columns: 1fr !important; }
+    .hour-item { min-width: 56px; }
+}
+
+.state-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px 20px;
+    gap: 10px;
+}
+
+.state-ic {
+    font-size: 36px;
+    line-height: 1;
+}
+
+.state-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.state-desc {
+    font-size: 13px;
+    color: var(--color-muted);
+    line-height: 1.6;
+    max-width: 320px;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 28px 20px;
+    gap: 8px;
+    color: var(--color-muted);
+}
+
+.empty-state svg,
+.empty-state .empty-icon {
+    width: 48px;
+    height: 48px;
+    opacity: 0.5;
+    margin-bottom: 4px;
+}
+
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 28px 20px;
+    gap: 10px;
+}
+
+.error-state .error-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-danger);
+}
+
+.error-state .error-desc {
+    font-size: 13px;
+    color: var(--color-muted);
+    line-height: 1.6;
+}
+
+.error-state button,
+.error-state .btn-retry {
+    margin-top: 4px;
+    padding: 8px 18px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.error-state button:hover,
+.error-state .btn-retry:hover {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
